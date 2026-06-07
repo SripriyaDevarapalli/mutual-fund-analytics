@@ -29,11 +29,11 @@ for scheme_name, amfi_code in schemes.items():
         meta = data.get("meta", {})
         nav_data = data.get("data", [])
 
-       print("\n" + "="*60)
-print(f"Requested Fund : {scheme_name}")
-print(f"AMFI Code      : {amfi_code}")
-print(f"API Scheme     : {meta.get('scheme_name', 'N/A')}")
-print(f"NAV Records    : {len(nav_data)}")
+        print("\n" + "=" * 60)
+        print(f"Requested Fund : {scheme_name}")
+        print(f"AMFI Code      : {amfi_code}")
+        print(f"API Scheme     : {meta.get('scheme_name', 'N/A')}")
+        print(f"NAV Records    : {len(nav_data)}")
 
         if nav_data:
             df = pd.DataFrame(nav_data)
@@ -46,3 +46,7 @@ print(f"NAV Records    : {len(nav_data)}")
 
     except Exception as e:
         print(f"Error fetching {scheme_name}: {e}")
+
+print("\n" + "=" * 60)
+print("LIVE NAV FETCH COMPLETED")
+print("=" * 60)
